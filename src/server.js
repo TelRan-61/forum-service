@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import config from "./config/config.js"
 import postRoutes from "./routes/post.routes.js"
+import errorHandler from "./middlewares/error.middleware.js";
 
 const app = express()
 
@@ -9,6 +10,7 @@ app.use(express.json())
 
 app.use('/forum', postRoutes)
 
+app.use(errorHandler)
 
 const connectDB = async () => {
     try {

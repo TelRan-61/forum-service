@@ -18,6 +18,15 @@ class PostController {
             return next(error);
         }
     }
+
+    async deletePost(req, res, next) {
+        try {
+            const post = await postService.deletePost(req.params.id);
+            return res.json(post);
+        } catch (error) {
+            return next(error);
+        }
+    }
 }
 
 export default new PostController()
