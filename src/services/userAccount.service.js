@@ -23,3 +23,5 @@ class UserAccountService {
         // TODO: change password
     }
 }
+
+export default new UserAccountService();
