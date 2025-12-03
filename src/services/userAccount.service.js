@@ -53,7 +53,7 @@ class UserAccountService {
     }
 
     async changePassword(login, newPassword) {
-        // TODO: change password
+        const userAccount = await userAccountRepository.changePassword(login, newPassword);
     }
 }
 
